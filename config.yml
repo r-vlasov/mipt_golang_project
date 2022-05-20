@@ -1,0 +1,49 @@
+version:  "1"
+name:     "config"
+description:  "test config"
+notify_delay: 30
+targets:  
+  dns:
+    - name: "1dns"
+      hostname: "ya.ru"
+      repeat: 2
+      timeout: 3
+      server: "8.8.8.8:53"
+    - name: "2dns"
+      hostname: "google.com"
+      repeat: 2
+      timeout: 3
+      server: "1.2.3.42:213"
+  ping:
+    - name: "1ping"
+      host: "ya.ru"
+      repeat: 2
+      timeout: 3
+    - name: "2ping"
+      host: "google.com"
+      timeout: 3
+      repeat: 3
+    - name: "mipter"
+      host: "ya.s.falta.mipt.ru"
+      timeout: 3
+      repeat: 3
+  http:
+    - name: "1http"
+      url: "http://google.com"
+      code: 301
+      repeat: 2
+      timeout: 3
+    - name: "2http"
+      url: "http://ya.s.falta.mipt.ru"
+      code: 200
+      repeat: 2
+      timeout: 3
+  rip:
+    - name: "bird_failed"
+      address: "10.115.13.101"
+      timeout: 30
+    - name: "bird_success"
+      address: "10.115.13.101"
+      timeout: 30
+      
+
